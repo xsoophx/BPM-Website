@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-purpleBackground
+
+    }
+}
+
+html {
+    @apply text-custom font-sans;
+    font-family: 'Cabin', sans-serif;
+}
+
+.imageContainer {
+    @apply relative;
+    height: calc(100vh - 80px);
+}
+
+.overlay {
+    @apply absolute top-0 left-0 w-full h-full z-10;
+    background-color: rgba(136, 3, 252, 0.2);
+}
