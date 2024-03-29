@@ -10,7 +10,13 @@ function App() {
                 <Toolbar></Toolbar>
                 <SplitContainer
                     imagePosition={"right"}
-                    imageUrl={process.env.PUBLIC_URL + '/images/CDJ.jpg'}>
+                    imageUrl={process.env.PUBLIC_URL + '/images/CDJ.jpg'}
+                    isStatic={true}>
+                </SplitContainer>
+                <SplitContainer
+                    imagePosition={"left"}
+                    imageUrl={process.env.PUBLIC_URL + '/images/CDJ.jpg'}
+                    isStatic={false}>
                 </SplitContainer>
             </header>
         </div>
