@@ -1,5 +1,5 @@
 @media (max-width: 825px) {
-    .toolbar {
+    .paddingInline {
         padding-inline: 20px !important;
         transition: all .15s ease-in-out;
     }

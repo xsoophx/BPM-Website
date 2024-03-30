@@ -25,3 +25,16 @@ html {
     @apply absolute top-0 left-0 w-full h-full z-10;
     background-color: rgba(136, 3, 252, 0.2);
 }
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    position: relative;
+    max-height: calc(100vw / 2);
+}
+
+.commonPadding {
+    padding-left: 10%;
+}

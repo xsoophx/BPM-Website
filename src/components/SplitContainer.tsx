@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {ImageContainer} from "./ImageContainer";
 import {TextContainer} from "./TextContainer";
+import {ImageContext} from "../contexts/ImageContext";
+import {TextProps} from "../texts/TextProps";
 
 type Props = {
     imagePosition: 'left' | 'right';
-    imageUrl: string;
     isStatic: boolean;
+    textProps: TextProps;
 }
-
-
-export const SplitContainer = ({imagePosition = "right", imageUrl, isStatic}: Props) => {
-    const imageLeft = imagePosition === 'left';
+export const SplitContainer = ({imagePosition = "right", isStatic, textProps}: Props) => {
+    const {leftImageUrl, rightImageUrl} = useContext(ImageContext)
+    const imageLeft = imagePosition === 'left'
+    const className = imageLeft ?
+        "flex flex-1 items-center justify-center text-xl p-[10%]"
+        : "paddingInline commonPadding flex flex-1 items-center justify-center text-xl p-[10%]"
 
     return (
         <div className="flex w-full flex-1">
-            {imageLeft ? <ImageContainer imageUrl={imageUrl} isStatic={isStatic}></ImageContainer> : null}
-            <div className="flex-1 text-xl p-20">
-                <TextContainer heading={"Heading"} text={"Text"}></TextContainer>
+            {imageLeft ? <ImageContainer imageUrl={leftImageUrl} isStatic={isStatic}></ImageContainer> : null}
+            <div className={className}>
+                <TextContainer {...textProps} addTopBarHeight={!imageLeft}></TextContainer>
             </div>
-            {!imageLeft ? <ImageContainer imageUrl={imageUrl} isStatic={isStatic}></ImageContainer> : null}
+            {!imageLeft ? <ImageContainer imageUrl={rightImageUrl} isStatic={isStatic}></ImageContainer> : null}
         </div>
     );
 };
