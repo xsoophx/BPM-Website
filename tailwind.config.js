@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             colors: {
                 purpleBackground: '#130826',
+                lightPurpleBackground: '#2f0142',
             },
             fontFamily: {
                 sans: ['Cabin', 'sans-serif']

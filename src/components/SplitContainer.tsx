@@ -13,7 +13,7 @@ export const SplitContainer = ({imagePosition = "right", isStatic, textProps}: P
     const {leftImageUrl, rightImageUrl} = useContext(ImageContext)
     const imageLeft = imagePosition === 'left'
     const className = imageLeft ?
-        "flex flex-1 items-center justify-center text-xl p-[10%]"
+        "flex bg-lightPurpleBackground flex-1 items-center justify-center text-xl p-[10%]"
         : "paddingInline commonPadding flex flex-1 items-center justify-center text-xl p-[10%]"
 
     return (
